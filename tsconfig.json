@@ -16,7 +16,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     //配置TS检查路径
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
     }

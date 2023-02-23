@@ -1,9 +1,8 @@
 import React from 'react'
-import { useRoutes } from 'react-router-dom'
-import routes from './router'
+import { ProjectListView } from './views/project-list'
 
 function App() {
-  return <div className="App">{useRoutes(routes)}</div>
+  return <ProjectListView />
 }
 
 export default App
