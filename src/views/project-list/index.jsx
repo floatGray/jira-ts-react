@@ -29,7 +29,7 @@ export const ProjectListView = () => {
         setUsers(await response.json())
       }
     })
-  }, [users])
+  }, [param])
 
   return (
     <div>
