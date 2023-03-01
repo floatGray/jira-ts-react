@@ -1,8 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import 'normalize.css'
-import './assets/css/index.less'
 import { loadDevTools } from 'jira-dev-tool'
+import 'antd/dist/antd'
 
 import App from '@/App'
 import { AppProviders } from './context'
