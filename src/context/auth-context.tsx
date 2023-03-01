@@ -24,7 +24,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const register = (form: AuthForm) => auth.register(form).then(setUser)
   const logout = () => auth.logout().then(() => setUser(null))
 
-  return <AuthContext.Provider value={{ user, login, register, logout }} />
+  // eslint-disable-next-line react/no-children-prop
+  return <AuthContext.Provider children={children} value={{ user, login, register, logout }} />
 }
 
 export const useAuth = () => {
