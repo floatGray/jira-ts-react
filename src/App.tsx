@@ -1,14 +1,12 @@
 import React from 'react'
-import { LoginScreen } from './views/login'
-import { ProjectListView } from './views/project-list'
+import { AuthenticatedApp } from './authenticated-app'
+import { useAuth } from './context/auth-context'
+import { UnAuthenticatedApp } from './unauthenticated-app'
+import { LoginScreen } from './unauthenticated-app/login'
 
 function App() {
-  return (
-    <div className="App">
-      <LoginScreen />
-      {/* <ProjectListView /> */}
-    </div>
-  )
+  const { user } = useAuth()
+  return <div className="App">{user ? <AuthenticatedApp /> : <UnAuthenticatedApp />}</div>
 }
 
 export default App
