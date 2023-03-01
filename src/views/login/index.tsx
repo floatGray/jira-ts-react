@@ -8,7 +8,7 @@ export const LoginScreen = () => {
     fetch(`${apiUrl}/login`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(param)
     }).then(async (response) => {

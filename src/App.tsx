@@ -4,9 +4,9 @@ import { ProjectListView } from './views/project-list'
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <LoginScreen />
-      <ProjectListView />
+      {/* <ProjectListView /> */}
     </div>
   )
 }
