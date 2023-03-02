@@ -4,7 +4,7 @@ import { Row } from './components/lib'
 import { useAuth } from './context/auth-context'
 import { ProjectListView } from './views/project-list'
 import { ReactComponent as SoftwareLogo } from '@/assets/software-logo.svg'
-import { Dropdown, MenuProps } from 'antd'
+import { Button, Dropdown, MenuProps } from 'antd'
 
 export const AuthenticatedApp = () => {
   const { logout, user } = useAuth()
@@ -24,7 +24,9 @@ export const AuthenticatedApp = () => {
         </HeaderLeft>
         <HeaderRight>
           <Dropdown menu={{ items }}>
-            <a onClick={(e) => e.preventDefault()}>HI,{user?.name}</a>
+            <Button type="link" onClick={(e) => e.preventDefault()}>
+              HI,{user?.name}
+            </Button>
           </Dropdown>
         </HeaderRight>
       </Header>
