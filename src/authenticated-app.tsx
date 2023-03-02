@@ -4,7 +4,7 @@ import { Row } from './components/lib'
 import { useAuth } from './context/auth-context'
 import { ProjectListView } from './views/project-list'
 import { ReactComponent as SoftwareLogo } from '@/assets/software-logo.svg'
-import { Dropdown, Menu, MenuProps } from 'antd'
+import { Dropdown, MenuProps } from 'antd'
 
 export const AuthenticatedApp = () => {
   const { logout, user } = useAuth()
