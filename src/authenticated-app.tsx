@@ -19,7 +19,6 @@ export const AuthenticatedApp = () => {
       <Header between={true}>
         <HeaderLeft gap={true}>
           <SoftwareLogo width={'18rem'} color={'rgb(38,132,255)'} />
-          <HeaderItem>logo</HeaderItem>
           <HeaderItem>项目</HeaderItem>
           <HeaderItem>用户</HeaderItem>
         </HeaderLeft>
