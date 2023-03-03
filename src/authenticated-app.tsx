@@ -5,8 +5,28 @@ import { useAuth } from './context/auth-context'
 import { ProjectListView } from './views/project-list'
 import { ReactComponent as SoftwareLogo } from '@/assets/software-logo.svg'
 import { Button, Dropdown, MenuProps } from 'antd'
+import { Navigate, Route, Routes } from 'react-router'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { ProjectView } from './views/project'
 
 export const AuthenticatedApp = () => {
+  return (
+    <Container>
+      <PageHeader />
+      <Main>
+        <ProjectListView />
+        <Router>
+          <Routes>
+            <Route path="/project" element={<ProjectListView />} />
+            <Route path="/project/:projectId/*" element={<ProjectView />} />
+          </Routes>
+        </Router>
+      </Main>
+    </Container>
+  )
+}
+
+const PageHeader = () => {
   const { logout, user } = useAuth()
   const items: MenuProps['items'] = [
     {
@@ -15,25 +35,20 @@ export const AuthenticatedApp = () => {
     }
   ]
   return (
-    <Container>
-      <Header between={true}>
-        <HeaderLeft gap={true}>
-          <SoftwareLogo width={'18rem'} color={'rgb(38,132,255)'} />
-          <HeaderItem>项目</HeaderItem>
-          <HeaderItem>用户</HeaderItem>
-        </HeaderLeft>
-        <HeaderRight>
-          <Dropdown menu={{ items }}>
-            <Button type="link" onClick={(e) => e.preventDefault()}>
-              HI,{user?.name}
-            </Button>
-          </Dropdown>
-        </HeaderRight>
-      </Header>
-      <Main>
-        <ProjectListView />
-      </Main>
-    </Container>
+    <Header between={true}>
+      <HeaderLeft gap={true}>
+        <SoftwareLogo width={'18rem'} color={'rgb(38,132,255)'} />
+        <HeaderItem>项目</HeaderItem>
+        <HeaderItem>用户</HeaderItem>
+      </HeaderLeft>
+      <HeaderRight>
+        <Dropdown menu={{ items }}>
+          <Button type="link" onClick={(e) => e.preventDefault()}>
+            HI,{user?.name}
+          </Button>
+        </Dropdown>
+      </HeaderRight>
+    </Header>
   )
 }
 
